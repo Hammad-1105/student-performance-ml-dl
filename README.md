@@ -1,3 +1,15 @@
+| Step | Task                        | Purpose                            |
+| ---- | --------------------------- | ---------------------------------- |
+| 1    | Load & preview data         | Sanity check + get quick structure |
+| 2    | Basic Info & Nulls          | Look for missing data, dtypes      |
+| 3    | Column-by-column deep dive  | Categorical vs numerical vs IDs    |
+| 4    | Correlation matrix          | Spot potential relationships       |
+| 5    | Visual exploration          | Univariate, bivariate, outliers    |
+| 6    | Target distribution         | Check regression suitability       |
+| 7    | Feature transformation plan | Scaling, encoding, outliers, etc.  |
+| 8    | Final preprocessing design  | Pipeline or manual steps           |
+
+
 ✅ Phase 0 — Project Setup & GitHub Init
 Create project directory and environment (conda, Jupyter)
 
