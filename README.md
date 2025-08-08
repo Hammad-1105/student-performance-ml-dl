@@ -1,3 +1,4 @@
+PHASE 1
 | Step | Task                        | Purpose                            |
 | ---- | --------------------------- | ---------------------------------- |
 | 1    | Load & preview data         | Sanity check + get quick structure |
@@ -8,6 +9,19 @@
 | 6    | Target distribution         | Check regression suitability       |
 | 7    | Feature transformation plan | Scaling, encoding, outliers, etc.  |
 | 8    | Final preprocessing design  | Pipeline or manual steps           |
+
+PHASE 2
+| Step | Task                                  | Purpose                                                             |
+| ---- | ------------------------------------- | ------------------------------------------------------------------- |
+| 0    | Train–Test Split                      | Prevent data leakage by splitting before preprocessing              |
+| 1    | Encode Categorical Variables          | Convert categorical data into numerical format for models           |
+| 2    | Drop/Engineer Features                | Remove irrelevant features, create new meaningful ones              |
+| 3    | Scale Numerical Features              | Standardize/normalize numeric data for better model performance     |
+| 4    | Handle Outliers *(Optional)*          | Treat extreme values that may distort model training                |
+| 5    | Dimensionality Reduction *(Optional)* | Reduce feature space using PCA for noise removal or visualization   |
+| 6    | Finalize Processed Dataset            | Ensure X\_train/X\_test/y\_train/y\_test are clean and ready        |
+| 7    | Build Preprocessing Pipeline          | Use `Pipeline` + `ColumnTransformer` for reproducible preprocessing |
+
 
 
 ✅ Phase 0 — Project Setup & GitHub Init
