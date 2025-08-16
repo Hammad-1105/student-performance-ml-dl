@@ -22,6 +22,20 @@ PHASE 2
 | 6    | Finalize Processed Dataset            | Ensure X\_train/X\_test/y\_train/y\_test are clean and ready        |
 | 7    | Build Preprocessing Pipeline          | Use `Pipeline` + `ColumnTransformer` for reproducible preprocessing |
 
+PHASE 3
+| Step | Task                                | Purpose                                                                              |
+| ---- | ----------------------------------- | ------------------------------------------------------------------------------------ |
+| 0    | Wire up `y_train`                   | Define target; keep `X_train` raw so the pipeline handles all preprocessing per fold |
+| 1    | Define CV + Metrics                 | Use 5-Fold CV with RMSE/MAE/R² for apples-to-apples comparisons                      |
+| 2    | Baselines (Dummy, Linear)           | Establish performance floor and a simple linear benchmark                            |
+| 3    | Regularized Linear (Ridge/Lasso/EN) | Handle noise/collinearity; check if linear models are enough                         |
+| 4    | Trees & Boosting                    | Try RandomForest / GradientBoosting (optionally XGBoost/LightGBM later)              |
+| 5    | Cross-validate consistently         | Evaluate each model in a `Pipeline(preprocessor → model)` to avoid leakage           |
+| 6    | Hyperparameter Tuning *(Optional)*  | `RandomizedSearchCV` on top performers with tight, sensible ranges                   |
+| 7    | Refit Best on Full Train            | Fit the winning pipeline on all training data                                        |
+| 8    | Diagnostics *(Optional)*            | Residuals, feature importance, learning curves                                       |
+| 9    | Save Best Pipeline                  | Persist the single `preprocessor+model` pipeline for later test eval & deployment    |
+
 
 
 ✅ Phase 0 — Project Setup & GitHub Init
